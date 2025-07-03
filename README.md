@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Summix - AI-Powered PDF Summarization
+
+A modern web application that transforms PDF documents into clear, actionable insights using AI-powered summarization.
+
+## Features
+
+- 🚀 AI-powered PDF analysis and summarization
+- 📄 Upload and process PDF documents up to 8MB
+- 💡 Extract key insights and important information
+- 🎯 Smart, structured summaries with bullet points
+- 📱 Responsive design for all devices
+- 🔐 Secure user authentication with Clerk
+- 📊 Usage tracking and limits
+- 💾 Save and manage your summaries
+
+## Tech Stack
+
+- **Frontend**: Next.js 15, React 18, TypeScript
+- **Styling**: Tailwind CSS, Shadcn/ui components
+- **Authentication**: Clerk
+- **AI/LLM**: OpenAI GPT, Google Gemini, DeepSeek
+- **Database**: SQLite
+- **File Upload**: UploadThing
+- **PDF Processing**: pdf-parse
+- **Deployment**: Vercel (recommended)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ and npm
+- OpenAI API key
+- Clerk account for authentication
+- UploadThing account for file uploads
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/summix.git
+cd summix
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Set up environment variables:
+```bash
+cp .env.example .env.local
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Fill in your environment variables:
+- `OPENAI_API_KEY` - Your OpenAI API key
+- `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` - Clerk publishable key
+- `CLERK_SECRET_KEY` - Clerk secret key
+- `UPLOADTHING_SECRET` - UploadThing secret
+- `UPLOADTHING_APP_ID` - UploadThing app ID
 
-## Learn More
+4. Run the development server:
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+summix/
+├── app/                    # Next.js app directory
+│   ├── (logged-in)/       # Protected routes
+│   ├── api/               # API routes
+│   └── layout.tsx         # Root layout
+├── components/            # React components
+│   ├── summaries/        # Summary-related components
+│   ├── common/           # Shared components
+│   ├── home/             # Landing page components
+│   ├── ui/               # UI components
+│   └── upload/           # Upload functionality
+├── lib/                  # Utility libraries
+├── utils/                # Helper functions
+└── public/               # Static assets
+```
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Author
+
+Built by [Vitthal Goel](https://vitthalgoel.com)
