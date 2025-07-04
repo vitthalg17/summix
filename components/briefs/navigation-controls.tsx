@@ -1,6 +1,6 @@
 'use client';
 
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Minus, Plus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -32,7 +32,7 @@ export function NavigationControls({
           currentSection === 0 ? 'opacity-50' : 'hover:bg-primary/20'
         )}
       >
-        <ChevronLeft className="w-5 h-5 text-white hover:text-yellow-400 transition-colors" />
+        <Minus className="w-5 h-5 text-white hover:text-red-400 transition-colors" />
       </Button>
 
       {/* Section Dots */}
@@ -62,7 +62,7 @@ export function NavigationControls({
           currentSection === totalSections - 1 ? 'opacity-50' : 'hover:bg-primary/20'
         )}
       >
-        <ChevronRight className="w-5 h-5 text-white hover:text-yellow-400 transition-colors" />
+        <Plus className="w-5 h-5 text-white hover:text-red-400 transition-colors" />
       </Button>
     </div>
   );

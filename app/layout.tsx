@@ -47,16 +47,16 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/faV.png', sizes: '32x32', type: 'image/png' },
-      { url: '/faV.png', sizes: '16x16', type: 'image/png' },
-      { url: '/faV.png', sizes: '32x32', type: 'image/png' },
+      { url: '/sum.png', sizes: '32x32', type: 'image/png' },
+      { url: '/sum.png', sizes: '16x16', type: 'image/png' },
+      { url: '/sum.png', sizes: '32x32', type: 'image/png' },
     ],
     apple: [
-      { url: '/faV.png', sizes: '180x180', type: 'image/png' },
+      { url: '/sum.png', sizes: '180x180', type: 'image/png' },
     ],
     other: [
-      { rel: 'android-chrome-192x192', url: '/faV.png' },
-      { rel: 'android-chrome-512x512', url: '/faV.png' },
+      { rel: 'android-chrome-192x192', url: '/sum.png' },
+      { rel: 'android-chrome-512x512', url: '/sum.png' },
     ],
   },
   manifest: '/site.webmanifest',
@@ -85,9 +85,9 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
         <head>
-          <link rel="icon" href="/faV.png" sizes="any" />
-          <link rel="icon" href="/faV.png" type="image/png" />
-          <link rel="apple-touch-icon" href="/faV.png" />
+          <link rel="icon" href="/sum.png" sizes="any" />
+          <link rel="icon" href="/sum.png" type="image/png" />
+          <link rel="apple-touch-icon" href="/sum.png" />
           <link rel="manifest" href="/site.webmanifest" />
           <meta name="theme-color" content="#d97706" />
         </head>

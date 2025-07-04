@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Upload, FileText, CheckCircle, Sparkles, X, Cloud, File } from 'lucide-react';
+import { Upload, FileText, CheckCircle, BadgePlus, X, FilePlus2, File } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { forwardRef, useState, useRef } from 'react';
 
@@ -165,12 +165,9 @@ const UploadFormInput = forwardRef<HTMLFormElement, UploadFormInputProps>(
                 </div>
               ) : (
                 <div className="flex flex-col items-center gap-4 text-center">
-                  {/* Cloud upload icon */}
-                  <div className="w-20 h-20 rounded-full bg-muted/50 flex items-center justify-center relative">
-                    <Cloud className="w-10 h-10 text-muted-foreground" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <Upload className="w-6 h-6 text-muted-foreground translate-x-1 translate-y-1" />
-                    </div>
+                  {/* File upload icon */}
+                  <div className="w-20 h-20 rounded-full bg-muted/50 flex items-center justify-center">
+                    <FilePlus2 className="w-10 h-10 text-muted-foreground" />
                   </div>
                   
                   {/* Main text */}
@@ -191,7 +188,7 @@ const UploadFormInput = forwardRef<HTMLFormElement, UploadFormInputProps>(
                     </div>
                     <div className="w-px h-4 bg-border" />
                     <div className="flex items-center gap-1">
-                      <Sparkles className="w-4 h-4" />
+                      <BadgePlus className="w-4 h-4" />
                       <span>Max 8MB</span>
                     </div>
                   </div>
@@ -215,7 +212,7 @@ const UploadFormInput = forwardRef<HTMLFormElement, UploadFormInputProps>(
                 </>
               ) : (
                 <>
-                  <Sparkles className="w-5 h-5 mr-3" />
+                  <BadgePlus className="w-5 h-5 mr-3" />
                   Generate Summary
                 </>
               )}

@@ -13,6 +13,11 @@ export default function Header() {
             <div className="container flex h-14 items-center">
                 <div className="mr-4 flex">
                     <NavLink href="/" className="mr-6 flex items-center space-x-2 duration-200 ease-in-out">
+                        <img 
+                            src="/sum.png" 
+                            alt="Sum icon" 
+                            className="w-6 h-6 lg:w-8 lg:h-8 animate-spin-slow"
+                        />
                         <span className="font-extrabold lg:text-xl text-foreground">
                             Summix
                         </span>
