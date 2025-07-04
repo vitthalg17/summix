@@ -20,14 +20,14 @@ export const metadata: Metadata = {
   authors: [{ name: "Vitthal Goel", url: "https://vitthalgoel.com" }],
   creator: "Vitthal Goel",
   publisher: "Vitthal Goel",
-  metadataBase: new URL('https://summix.app'),
+  metadataBase: new URL('https://summix.vitthalgoel.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: "Summix - AI-Powered PDF Summarization",
     description: "Transform your PDF documents into clear, actionable insights with AI-powered summaries.",
-    url: 'https://summix.app',
+    url: 'https://summix.vitthalgoel.com',
     siteName: 'Summix',
     type: 'website',
     images: [
