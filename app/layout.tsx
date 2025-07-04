@@ -47,16 +47,16 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: '32x32', type: 'image/x-icon' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/faV.png', sizes: '32x32', type: 'image/png' },
+      { url: '/faV.png', sizes: '16x16', type: 'image/png' },
+      { url: '/faV.png', sizes: '32x32', type: 'image/png' },
     ],
     apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      { url: '/faV.png', sizes: '180x180', type: 'image/png' },
     ],
     other: [
-      { rel: 'android-chrome-192x192', url: '/android-chrome-192x192.png' },
-      { rel: 'android-chrome-512x512', url: '/android-chrome-512x512.png' },
+      { rel: 'android-chrome-192x192', url: '/faV.png' },
+      { rel: 'android-chrome-512x512', url: '/faV.png' },
     ],
   },
   manifest: '/site.webmanifest',
@@ -85,9 +85,9 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
         <head>
-          <link rel="icon" href="/favicon.ico" sizes="any" />
-          <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-          <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+          <link rel="icon" href="/faV.png" sizes="any" />
+          <link rel="icon" href="/faV.png" type="image/png" />
+          <link rel="apple-touch-icon" href="/faV.png" />
           <link rel="manifest" href="/site.webmanifest" />
           <meta name="theme-color" content="#d97706" />
         </head>

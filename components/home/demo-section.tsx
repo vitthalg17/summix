@@ -31,7 +31,7 @@ export default function DemoSection() {
                         </div>
                     </div>
                     <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                        Briefly transforms <span className="text-primary">documents into insights</span> — in seconds!
+                        Summix transforms <span className="text-primary">documents into insights</span> — in seconds!
                     </h2>
                     <p className="mt-6 text-lg leading-8 text-muted-foreground mb-4">
                         Upload any PDF and watch our AI extract the most important information, 
