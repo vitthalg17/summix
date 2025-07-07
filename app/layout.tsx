@@ -90,6 +90,15 @@ export default function RootLayout({
           <link rel="apple-touch-icon" href="/sum.png" />
           <link rel="manifest" href="/site.webmanifest" />
           <meta name="theme-color" content="#d97706" />
+          <script src="https://seo-fixer.writesonic.com/site-audit/fixer-script/index.js" id="wsAiSeoMb" type="application/javascript"></script>
+          <script id="wsAiSeoInitScript" dangerouslySetInnerHTML={{
+            __html: `
+              wsSEOfixer.configure({
+                hostURL: 'https://seo-fixer.writesonic.com',
+                siteID: '686b8ae2cdd39b00259c3d7c'
+              });
+            `
+          }} />
         </head>
         <body className={`${fontPoppins.variable} font-sans antialiased bg-background text-foreground`}>
           <ThemeProvider
