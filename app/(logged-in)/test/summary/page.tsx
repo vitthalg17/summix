@@ -1,6 +1,6 @@
-import { SummaryHeader } from '@/components/briefs/summary-header';
-import SourceInfo from '@/components/briefs/source-info';
-import SummaryViewer from '@/components/briefs/summary-viewer';
+import { SummaryHeader } from '@/components/summaries/summary-header';
+import SourceInfo from '@/components/summaries/source-info';
+import SummaryViewer from '@/components/summaries/summary-viewer';
 
 const mockSummary = {
   id: 'test-123',

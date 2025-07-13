@@ -15,15 +15,17 @@ export default function CTASection() {
                         </div>
                     </div>
                     <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                        Transform your PDFs into clear, 
-                        <span className="text-primary"> actionable insights</span>
+                        Turn your PDFs into 
+                        <span className="text-primary"> easy summaries</span>
                     </h2>
                     <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                        Join thousands of users who are already saving time with AI-powered PDF summaries.
+                        Join thousands of users who save time with PDF summaries. 
+                        <span className="font-semibold text-primary"> Get 3 free summaries daily!</span>
                     </p>
                     <div className="mt-10 flex items-center justify-center gap-6">
                         <SignedIn>
                             <Button
+                                asChild
                                 variant="default"
                                 size="lg"
                                 className="bg-primary w-full min-[400px]:w-auto transition-all duration-300 hover:no-underline"
@@ -36,6 +38,7 @@ export default function CTASection() {
                         </SignedIn>
                         <SignedOut>
                             <Button
+                                asChild
                                 variant="default"
                                 size="lg"
                                 className="bg-primary w-full min-[400px]:w-auto transition-all duration-300 hover:no-underline"

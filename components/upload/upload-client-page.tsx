@@ -23,12 +23,12 @@ export default function UploadClientPage({ creditsLeft }: UploadClientPageProps)
                     <div className="flex justify-center mb-8">
                         <Badge
                             variant="secondary"
-                            className={`px-6 py-3 text-sm font-bold rounded-full border-[3px] transition-all duration-300 shadow-xl ${
+                            className={`px-6 py-3 text-sm font-bold rounded-full border-2 transition-all duration-300 shadow-lg ${
                                 creditsLeft <= 0 
-                                    ? 'bg-red-200 border-red-600 text-red-900 shadow-red-300 ring-2 ring-red-500/20 dark:bg-red-900/20 dark:border-red-700 dark:text-red-300' 
+                                    ? 'bg-destructive/10 border-destructive text-destructive hover:bg-destructive/20' 
                                     : creditsLeft === 1 
-                                    ? 'bg-orange-200 border-orange-600 text-orange-900 shadow-orange-300 ring-2 ring-orange-500/20 dark:bg-orange-900/20 dark:border-orange-700 dark:text-orange-300'
-                                    : 'bg-green-200 border-green-600 text-green-900 shadow-green-300 ring-2 ring-green-500/20 dark:bg-green-900/20 dark:border-green-700 dark:text-green-300'
+                                    ? 'bg-orange-500/10 border-orange-500 text-orange-600 hover:bg-orange-500/20 dark:text-orange-400'
+                                    : 'bg-primary/10 border-primary text-primary hover:bg-primary/20'
                             }`}
                         >
                             {creditsLeft <= 0 ? (

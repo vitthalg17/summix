@@ -7,6 +7,7 @@ import { ProgressBar } from './progress-bar';
 import { parseSection } from '@/utils/summary-helpers';
 import { cn } from '@/lib/utils';
 import ContentSection from './content-section';
+import { MotionDiv } from '../common/motion-wrapper';
 
 interface SummaryViewerProps {
   summary: string;
@@ -49,7 +50,7 @@ export function SummaryViewer({ summary, metadata }: SummaryViewerProps) {
         currentSection={currentSection}
       />
       
-      <div className="h-full overflow-y-auto scrollbar-hide pt-12 sm:pt-16 pb-20 sm:pb-24">
+      <MotionDiv key={currentSection} initial={{opacity: 0}} whileInView={{opacity: 1}} transition={{duration: 0.2, ease: "easeInOut"}} exit={{opacity: 0}} className="h-full overflow-y-auto scrollbar-hide pt-12 sm:pt-16 pb-20 sm:pb-24">
         <div className="px-4 sm:px-6">
           {metadata && (
             <div className="mb-8 text-sm text-muted-foreground">
@@ -62,7 +63,7 @@ export function SummaryViewer({ summary, metadata }: SummaryViewerProps) {
           <SectionTitle title={sections[currentSection]?.title || ''} />
           <ContentSection title={sections[currentSection]?.title || ''} points={sections[currentSection]?.points || []} />
         </div>
-      </div>
+      </MotionDiv>
 
       <NavigationControls
         currentSection={currentSection}

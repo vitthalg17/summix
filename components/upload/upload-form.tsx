@@ -87,6 +87,14 @@ export default function UploadForm() {
             
             const { data = null, message = null } = result || {};
 
+            if (message === 'FILE_TOO_LARGE') {
+                toast("📄 File too large", {
+                    description: "Limit is 10000 words, please try with a shorter file."
+                });
+                setIsLoading(false);
+                return;
+            }
+
             if (data) {
                 let storeResult: any;
                 toast("📝 Saving PDF...", {

@@ -173,10 +173,10 @@ const UploadFormInput = forwardRef<HTMLFormElement, UploadFormInputProps>(
                   {/* Main text */}
                   <div className="space-y-2">
                     <h3 className="text-2xl font-semibold text-foreground">
-                      Drag and drop your file
+                      Drop your file here
                     </h3>
                     <p className="text-muted-foreground">
-                      or click to browse (PDF up to 8MB)
+                      or click to choose (PDF up to 8MB)
                     </p>
                   </div>
                   
@@ -217,6 +217,13 @@ const UploadFormInput = forwardRef<HTMLFormElement, UploadFormInputProps>(
                 </>
               )}
             </Button>
+          </div>
+          
+          {/* Disclaimer */}
+          <div className="text-center text-sm text-muted-foreground max-w-2xl mx-auto">
+            <p>
+              <strong>Disclaimer:</strong> For optimal performance on our free platform, uploaded PDF files should not exceed 10,000 words in length. Files larger than this limit may fail to process correctly.
+            </p>
           </div>
         </form>
       </div>

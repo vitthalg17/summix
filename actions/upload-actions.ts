@@ -132,11 +132,11 @@ export async function generatePDFSummary(uploadResponse: [{
                 }
             };
         } catch (error: any) {
-            if (error instanceof Error && error.message === 'Rate limit exceeded. Please try again later.') {
+            if (error instanceof Error && (error.message.includes('maximum context length') || error.message === 'Rate limit exceeded. Please try again later.')) {
                 try {
-                    console.log('OpenAI rate limit exceeded, falling back to DeepSeek...');
+                    console.log(`🔄 [${processingId}] OpenAI failed (${error.message.includes('maximum context length') ? 'context length' : 'rate limit'}), falling back to DeepSeek...`);
                     const summary = await generateSummaryFromDeepseek(pdfText);
-                    console.log('Summary generated successfully with DeepSeek');
+                    console.log(`✅ [${processingId}] Summary generated successfully with DeepSeek`);
                     return {
                         success: true,
                         message: 'PDF summarized successfully (using DeepSeek)',
@@ -147,8 +147,18 @@ export async function generatePDFSummary(uploadResponse: [{
                             userId
                         }
                     };
-                } catch (deepseekError) {
-                    console.error('DeepSeek API failed after OpenAI quota exceeded', deepseekError);
+                } catch (deepseekError: any) {
+                    console.error(`❌ [${processingId}] DeepSeek API failed after OpenAI failure`, deepseekError);
+                    
+                    // If the original error was context length and DeepSeek also fails, return file too large
+                    if (error.message.includes('maximum context length')) {
+                        return {
+                            success: false,
+                            message: 'FILE_TOO_LARGE',
+                            data: null,
+                        };
+                    }
+                    
                     throw new Error('Failed to generate summary with available AI providers');
                 }
             }

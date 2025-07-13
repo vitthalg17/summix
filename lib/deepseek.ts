@@ -8,8 +8,18 @@ const model = new ChatDeepSeek({
     maxTokens: 1500,
 });
 
+// Check if API key exists
+if (!process.env.DEEPSEEK_API_KEY) {
+    console.warn('⚠️  Warning: DEEPSEEK_API_KEY environment variable is not set');
+}
+
 export async function generateSummaryFromDeepseek(pdfText: string) {
     try {
+        console.log('🔄 Deepseek API: Starting chat completion...', { 
+            textLength: pdfText.length,
+            apiKeyExists: !!process.env.DEEPSEEK_API_KEY 
+        });
+        
         const messages = [
             {
                 role: "system" as const,
@@ -22,6 +32,11 @@ export async function generateSummaryFromDeepseek(pdfText: string) {
         ];
 
         const response = await model.invoke(messages);
+        
+        console.log('✅ Deepseek API: Chat completion successful', { 
+            responseLength: response.content?.length || 0,
+            responseType: typeof response.content
+        });
         
         // Ensure we return a string
         if (typeof response.content === 'string') {
@@ -36,7 +51,12 @@ export async function generateSummaryFromDeepseek(pdfText: string) {
             return String(response.content);
         }
     } catch (error: any) {
-        console.error('Deepseek API Error:', error);
+        console.error('❌ Deepseek API Error:', error);
+        
+        // Check if it's a context length error
+        if (error?.message && error.message.includes('maximum context length')) {
+            throw new Error(`Deepseek API Error: ${error.message}`);
+        }
         
         if (error?.status === 429) {
             throw new Error("Rate limit exceeded. Please try again later.");
