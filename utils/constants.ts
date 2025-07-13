@@ -19,10 +19,9 @@ export const itemVariants = {
   visible: {
     opacity: 1,
     transition: {
-      type: 'spring',
+      type: "spring" as const,
       damping: 15,
       stiffness: 50,
-      duration: 0.8,
     },
   },
 };
@@ -30,7 +29,7 @@ export const itemVariants = {
 export const buttonVariants = {
   scale: 1.05,
   transition: {
-    type: 'spring',
+    type: "spring" as const,
     stiffness: 300,
     damping: 10,
   },
